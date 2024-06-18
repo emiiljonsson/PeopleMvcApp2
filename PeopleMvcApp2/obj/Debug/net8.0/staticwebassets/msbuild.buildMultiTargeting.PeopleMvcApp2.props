@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\PeopleMvcApp2.props" />
+</Project>

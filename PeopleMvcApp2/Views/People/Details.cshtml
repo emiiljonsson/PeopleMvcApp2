@@ -1,0 +1,21 @@
+﻿@model PeopleMvcApp.Models.Person
+
+<h2>Person Details</h2>
+<table class="table">
+    <tr>
+        <td><strong>Name:</strong></td>
+        <td>@Model.Name</td>
+    </tr>
+    <tr>
+        <td><strong>Phone Number:</strong></td>
+        <td>@Model.PhoneNumber</td>
+    </tr>
+    <tr>
+        <td><strong>City:</strong></td>
+        <td>@Model.City</td>
+    </tr>
+</table>
+@using (Html.BeginForm("Delete", "People", new { id = Model.Id }, FormMethod.Post))
+{
+    <button type="submit" class="btn btn-danger">Delete</button>
+}

@@ -1,0 +1,12 @@
+﻿@model PeopleMvcApp.Models.Person
+
+<div class="person-container">
+    <h3>@Model.Name</h3>
+    <p><strong>Phone Number:</strong> @Model.PhoneNumber</p>
+    <p><strong>City:</strong> @Model.City</p>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Details", "Details", new { id = Model.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
+    </p>
+</div>

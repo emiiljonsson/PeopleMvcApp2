@@ -1,0 +1,21 @@
+﻿@model PeopleMvcApp.Models.PeopleViewModel
+
+<h2>People List</h2>
+
+<!-- Sökformulär -->
+@using (Html.BeginForm("Index", "People", FormMethod.Get))
+{
+    <p>
+        Search: @Html.TextBox("searchString", Model.SearchString)
+        <input type="submit" value="Search" />
+    </p>
+}
+
+<div class="people-list">
+    @foreach (var person in Model.People)
+    {
+        @await Html.PartialAsync("_PersonPartial", person)
+    }
+</div>
+
+@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
